@@ -26,6 +26,9 @@
                             </div>
                         </div>
                         <div class="col-12 col-lg-4 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+                            <div class="donate-btn lang">
+                                <a href="../en/contact.html">PT</a>
+                            </div>
                             <div class="donate-btn">
                                 <a href="mailto:akuendeleya@yahoo.com?subject=QUERO FAZER UMA DOAÇÃO">Faça uma Doação</a>
                             </div>
@@ -38,12 +41,11 @@
                     <div class="row">
                         <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
                             <div class="site-branding d-flex align-items-center">
-                                <a class="d-block" href="#" rel="home">
+                                <a class="d-block" rel="home">
+                                    <img class="flutuar" src="../rsc/img/logo.jpeg" height="69" alt="kuendeleya_logo"/> 
                                     <span id="titulo_site">
-                                        ASSOCIAÇÃO KUENDELEYA
-                                    </span>
-
-                                    <!--<img class="d-block" src="../rsc/img/logo.jpeg" height="29px" alt="kuendeleya_logo"/>-->
+                                        &nbsp;&nbsp;&nbsp; ASSOCIAÇÃO KUENDELEYA
+                                    </span>                                  
                                 </a>
                             </div>
                             <nav class="site-navigation d-flex justify-content-end align-items-center">
@@ -92,20 +94,19 @@
                     <div class="col-12 col-lg-5">
                         <div class="entry-content">
                             <h2>Queremos falar com você</h2>
-                            <p class="texto_justificado">Apreciamos imensamente qualquer tipo de interação pois acreditamos que é de pequenas ideias que construimos uma sociedade sustentável, inclusiva, abrangente socio e economicamente.</p>
+                            <p class="texto_justificado">Apreciamos imensamente qualquer tipo de interação, pois acreditamos que é de pequenas ideias que construimos uma sociedade sustentável, inclusiva, abrangente socio e economicamente.</p>
                         </div>
                     </div>
                     <div class="col-12 col-lg-7">
                         <form class="contact-form">
-                            <input type="text" placeholder="Nome">
-                            <input type="email" placeholder="Email">
-                            <textarea rows="15" cols="6" placeholder="Mensagem"></textarea>
+                            <input type="text" placeholder="Nome" id="name">
+                            <input type="email" placeholder="Email" id="email">
+                            <textarea rows="15" cols="6" id="message" placeholder="Mensagem"></textarea>
                             <span>
-                                <input class="btn gradient-bg" type="submit" value="Contactar">
+                                <input class="btn gradient-bg" type="button" value="Contactar" id="enviar_email">                                
                             </span>
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -130,7 +131,7 @@
                         <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
                             <h2>Links Úteis</h2>
                             <ul>
-                                <li><a href="#">Politica de Privacidade</a></li>
+                                <li><a href="#">Política de Privacidade</a></li>
                                 <li><a href="mailto:akuendeleya@yahoo.com?subject=QUERO SER VOLUNTÁRIO">Torne-se um Voluntário</a></li>
                                 <li><a href="mailto:akuendeleya@yahoo.com?subject=QUERO FAZER UMA DOAÇÃO">Faça uma Doação</a></li>
                             </ul>
@@ -170,7 +171,8 @@
                 </div>
             </div>
         </footer>
-        <script src="../rsc/js/jquery.js" type="text/javascript"></script>
+        <script src="../rsc/js/jqueryv1.12.4.js" type="text/javascript"></script>
+        <script src="../rsc/js/jquery.min.js" type="text/javascript"></script>
         <script src="../rsc/js/jquery.collapsible.min.js" type="text/javascript"></script>
         <script src="../rsc/js/swiper.min.js" type="text/javascript"></script> 
         <script src="../rsc/js/circle-progress.min.js" type="text/javascript"></script>
@@ -179,6 +181,23 @@
         <script src="../rsc/js/jquery.countdown.min.js" type="text/javascript"></script>
         <script src="../rsc/js/local.js" type="text/javascript"></script>        
         <script src="https://use.fontawesome.com/48e5e85795.js"></script>
+        <script type="text/javascript">
+                                    $('#enviar_email').click(function () {
+                                        var name = $('#name').val();
+                                        var email = $('#email').val();
+                                        var message = $('#message').val();
+                                        var messageLineBreak = message.replace(/\r\n|\r|\n/g, "%0D%0A");
+                                        window.open(
+                                                'mailto:akuendeleya@yahoo.com?subject=CONTACTO PELO WEBSITE&body='
+                                                + messageLineBreak
+                                                + '%0D%0A'
+                                                + name
+                                                + ' '
+                                                + '%0D%0A'
+                                                + email,
+                                                '_blank');
+                                    });
+        </script>
 
     </body>
 </html>
