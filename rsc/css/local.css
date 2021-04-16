@@ -70,3 +70,15 @@
 .lang{
     margin-right: 20px;
 }
+
+.help-us .values{
+    position:relative;
+    padding-bottom:24px;
+    font-size:20px;
+    font-weight:500;
+    color:#fff;  
+}
+
+.help-us .values li{
+    list-style:none;
+}
